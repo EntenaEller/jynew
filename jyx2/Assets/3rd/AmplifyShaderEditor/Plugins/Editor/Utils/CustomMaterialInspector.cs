@@ -333,9 +333,9 @@ internal class ASEMaterialInspector : ShaderGUI
 
 		for( int i = 0; i < properties.Length; i++ )
 		{
-			if( ( properties[ i ].flags & ( MaterialProperty.PropFlags.HideInInspector | MaterialProperty.PropFlags.PerRendererData ) ) == MaterialProperty.PropFlags.None )
+			if( ( properties[ i ].propertyFlags & ( UnityEngine.Rendering.ShaderPropertyFlags.HideInInspector | UnityEngine.Rendering.ShaderPropertyFlags.PerRendererData ) ) == UnityEngine.Rendering.ShaderPropertyFlags.None )
 			{
-				if( ( properties[ i ].flags & MaterialProperty.PropFlags.NoScaleOffset ) == MaterialProperty.PropFlags.NoScaleOffset )
+				if( ( properties[ i ].propertyFlags & UnityEngine.Rendering.ShaderPropertyFlags.NoScaleOffset ) == UnityEngine.Rendering.ShaderPropertyFlags.NoScaleOffset )
 				{
 					object obj = MaterialPropertyHandlerEx.GetHandler( mat.shader, properties[ i ].name );
 					if( obj != null )

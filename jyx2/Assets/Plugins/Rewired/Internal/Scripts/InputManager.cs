@@ -318,9 +318,11 @@ namespace Rewired {
 #endif
         }
 
-        protected override IExternalTools GetExternalTools() {
-            return new ExternalTools();
+        protected override IExternalTools GetExternalTools()
+        {
+            throw new NotImplementedException();
         }
+
 
         private bool CheckDeviceName(string searchPattern, string deviceName, string deviceModel) {
             return System.Text.RegularExpressions.Regex.IsMatch(deviceName, searchPattern, System.Text.RegularExpressions.RegexOptions.IgnoreCase) ||

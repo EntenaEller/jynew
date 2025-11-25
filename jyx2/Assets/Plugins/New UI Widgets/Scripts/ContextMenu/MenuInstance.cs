@@ -270,7 +270,7 @@
 
 				if (parent == null)
 				{
-					ModalKey = ModalHelper.Open(Owner.RectTransform, null, Color.clear, Close, ParentCanvas);
+					
 				}
 
 				CreateView();
@@ -310,7 +310,7 @@
 
 				if (ModalKey.HasValue)
 				{
-					ModalHelper.Close(ModalKey.Value);
+					
 				}
 
 				if ((submenu != null) && submenu.IsOpened)

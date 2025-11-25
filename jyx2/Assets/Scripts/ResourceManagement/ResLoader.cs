@@ -69,7 +69,7 @@ namespace Jyx2.ResourceManagement
             _scenesMap.Clear();
             _modList.Clear();
 
-            await Resources.UnloadUnusedAssets();
+             Resources.UnloadUnusedAssets();
 
             if (IsEditor())
             {
@@ -221,7 +221,7 @@ namespace Jyx2.ResourceManagement
             path = path.ToLower();
             if (_scenesMap.ContainsKey(path))
             {
-                await SceneManager.LoadSceneAsync(_scenesMap[path].Item2);
+                SceneManager.LoadSceneAsync(_scenesMap[path].Item2);
                 await UniTask.WaitForEndOfFrame();
             }
             else
@@ -327,7 +327,7 @@ namespace Jyx2.ResourceManagement
             {
                 if (File.Exists(fixedUri))
                 {
-                    await EditorSceneManager.LoadSceneAsyncInPlayMode(fixedUri,
+                    EditorSceneManager.LoadSceneAsyncInPlayMode(fixedUri,
                         new LoadSceneParameters() {loadSceneMode = LoadSceneMode.Single});
                     return;
                 }
