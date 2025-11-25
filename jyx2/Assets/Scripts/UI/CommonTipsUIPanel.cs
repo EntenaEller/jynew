@@ -70,8 +70,6 @@ public partial class CommonTipsUIPanel:Jyx2_UIBase
         {
             //FADE相关逻辑
             await Task.Delay(TimeSpan.FromSeconds(POPINFO_FADEOUT_TIME));
-            mainText.DOFade(0, POPINFO_FADEOUT_TIME);
-            mainImg.DOFade(0, POPINFO_FADEOUT_TIME);
             await Task.Delay(TimeSpan.FromSeconds(duration - POPINFO_FADEOUT_TIME));
         }
         else
@@ -91,11 +89,11 @@ public partial class CommonTipsUIPanel:Jyx2_UIBase
         
         MiddleTopMessageSuggest_RectTransform.gameObject.SetActive(true);
         MiddleTopMessageSuggest_RectTransform.DOScale(1.2f, duration / 2);
-        cg.DOFade(1, duration / 2);
+
         await Task.Delay(TimeSpan.FromSeconds(duration/2));
         
         MiddleTopMessageSuggest_RectTransform.DOScale(1f, duration / 2);
-        cg.DOFade(0, duration / 2);
+
         await Task.Delay(TimeSpan.FromSeconds(duration));
         MiddleTopMessageSuggest_RectTransform.gameObject.SetActive(false);
     }

@@ -240,7 +240,6 @@ namespace Jyx2.UINavigation
                 var scrollPosY = scrollRect.verticalNormalizedPosition - scrollRect.NormalizeScrollDistance(1, offsetY);
                 result.y = Mathf.Clamp01(scrollPosY);
             }
-            scrollRect.DONormalizedPos(result, 0.1f);
         }
 
         public static void TryFocusInScrollRect(Component comp)

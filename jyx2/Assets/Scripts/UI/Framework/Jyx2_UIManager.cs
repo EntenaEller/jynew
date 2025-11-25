@@ -16,7 +16,6 @@ using Cysharp.Threading.Tasks;
 using i18n.TranslatorDef;
 using Jyx2;
 using Jyx2.ResourceManagement;
-using Rewired.Integration.UnityUI;
 using UnityEngine;
 
 public enum UILayer 
@@ -36,22 +35,13 @@ public class Jyx2_UIManager : MonoBehaviour
         {
             if (_instace == null) 
             {
-                var rewiredObj = FindObjectOfType<Rewired.InputManager>();
-                if(rewiredObj == null)
-                {
-                    var inputMgrPrefab = Resources.Load<GameObject>("RewiredInputManager");
-                    var go = Instantiate(inputMgrPrefab);
-                    rewiredObj = go.GetComponent<Rewired.InputManager>();
-                }
 
                 var canvasPrefab = Resources.Load<GameObject>("MainCanvas");
                 var canvsGo = Instantiate(canvasPrefab);
                 canvsGo.name = "MainCanvas";
                 _instace = canvsGo.GetComponent<Jyx2_UIManager>();
                 _instace.Init();
-
-                var rewiredInputModule = canvsGo.GetComponentInChildren<RewiredStandaloneInputModule>();
-                rewiredInputModule.RewiredInputManager = rewiredObj;
+                
 
                 DontDestroyOnLoad(_instace);
             }

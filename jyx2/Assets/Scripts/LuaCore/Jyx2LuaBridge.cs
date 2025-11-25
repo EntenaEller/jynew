@@ -313,7 +313,6 @@ namespace Jyx2
             }
 
             blackCover.gameObject.SetActive(true);
-            blackCover.DOFade(1, 1).OnComplete(() => callback());
         }
         /// <summary>
         /// 关闭暗场景
@@ -339,11 +338,7 @@ namespace Jyx2
                 return;
             }
 
-            blackCover.DOFade(0, 1).OnComplete(() =>
-            {
-                blackCover.gameObject.SetActive(false);
-                callback();
-            });
+
         }
         /// <summary>
         /// 开启/关闭屏幕后处理中的边缘阴影
@@ -536,7 +531,6 @@ namespace Jyx2
             }
             clonePlayer = null;
 
-            playableDiretor.GetComponent<PlayableDirectorHelper>().ClearTempObjects();
         }
         /// <summary>
         /// 设置Timeline的播放速度
@@ -2103,10 +2097,6 @@ namespace Jyx2
                 if (playableBinding.outputTargetType == typeof(Animator))
                 {
                     //移动主角来播放特殊剧情
-                    if (isMovePlayer)
-                    {
-                        playableDirector.GetComponent<PlayableDirectorHelper>().BindPlayer(player);
-                    }
                     playableDirector.SetGenericBinding(playableBinding.sourceObject, player);
                 }
             });

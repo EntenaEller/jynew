@@ -192,9 +192,7 @@ namespace Jyx2.Battle
 
             //播放奔跑动画
             role.View.Run();
-
-            //播放移动
-            await role.View.transform.DOPath(path.ToArray(), path.Count * 0.15f).SetLookAt(0).SetEase(Ease.Linear);
+            
 
             //idle动画
             role.View.Idle();

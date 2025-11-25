@@ -68,8 +68,7 @@ public class ConsolePanel : MonoBehaviour
 
     void OnReporter()
     {
-        var reporter = GameObject.Find("[Reporter]").GetComponent<Reporter>();
-        reporter.isShowReporterGUI = !reporter.isShowReporterGUI;
+    
     }
     
     void OnConfirm()

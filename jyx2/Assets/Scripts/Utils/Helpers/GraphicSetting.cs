@@ -203,8 +203,6 @@ public class GraphicSetting : MonoBehaviour
         var list = GameObject.FindGameObjectsWithTag("StylizedWater");
         foreach (var water in list)
         {
-            var script = water.GetComponent<StylizedWater.StylizedWater>();
-            if (script == null) continue;
 
             var meshRenderer = water.GetComponent<MeshRenderer>();
             if (meshRenderer == null) continue;

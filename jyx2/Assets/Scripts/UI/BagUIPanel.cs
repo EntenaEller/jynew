@@ -20,7 +20,6 @@ using Jyx2.Util;
 using UnityEngine;
 using Jyx2.UINavigation;
 using UnityEngine.UI;
-using UnityEngine.Purchasing;
 using UnityEngine.EventSystems;
 
 public partial class BagUIPanel : Jyx2_UIBase

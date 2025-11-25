@@ -188,10 +188,6 @@ public static class GameUtil
 
         blackCover.gameObject.SetActive(true);
         var img = blackCover.GetComponent<Image>();
-        img.DOColor(Color.red, 2).OnComplete(() =>
-        {
-            blackCover.gameObject.SetActive(false);
-        });
     }
 
     public static async UniTask ShowYesOrNoUseItem(LItemConfig item, Action action)
